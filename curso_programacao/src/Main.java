@@ -1,15 +1,14 @@
-import java.util.Locale;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
-        int a, b;
-        double resultado;
+        Scanner sc = new Scanner(System.in);
 
-        a = 5;
-        b = 2;
+        String x;
+        x = sc.nextLine();
 
-        resultado = (double) a / b;
+        System.out.println("Voce digitou: " + x);
 
-        System.out.println(resultado);
+        sc.close();
     }
 }
