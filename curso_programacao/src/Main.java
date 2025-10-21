@@ -1,11 +1,14 @@
 import java.util.Scanner;
+import java.util.Locale;
 
-public class Main{
-    public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+
         Scanner sc = new Scanner(System.in);
 
-        String x;
-        x = sc.nextLine();
+        double x;
+        x = sc.nextDouble();
 
         System.out.println("Voce digitou: " + x);
 
