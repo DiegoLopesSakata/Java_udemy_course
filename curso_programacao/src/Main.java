@@ -5,21 +5,37 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        int x;
-        String s1, s2, s3;
+        int dia = sc.nextInt();
+        String diaSemana;
 
-        x = sc.nextInt();
-        sc.nextLine();
-        s1 = sc.nextLine();
-        s2 = sc.nextLine();
-        s3 = sc.nextLine();
+        switch (dia){
+            case 1:
+                diaSemana = "Domingo";
+                break;
+            case 2:
+                diaSemana = "Segunda";
+                break;
+            case 3:
+                diaSemana = "Terça";
+                break;
+            case 4:
+                diaSemana = "Quarta";
+                break;
+            case 5:
+                diaSemana = "Quinta";
+                break;
+            case 6:
+                diaSemana = "Sexta";
+                break;
+            case 7:
+                diaSemana = "Sabado";
+                break;
+            default:
+                diaSemana = "Valor invalido";
+                break;
+        }
 
-        System.out.println("Voce digitou:");
-        System.out.println(x);
-        System.out.println(s1);
-        System.out.println(s2);
-        System.out.println(s3);
-
+        System.out.println("O dia da semana eh " + diaSemana);
         sc.close();
     }
 }
