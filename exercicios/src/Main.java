@@ -23,7 +23,10 @@ void main() {
 
     var triangleY = new Triangle(a, b, c);
 
-    if(triangleX.area > triangleY.area){
+    var areaX = triangleX.area();
+    var areaY = triangleY.area();
+
+    if(areaX > areaY){
         System.out.println("Larger area: X");
     }
     else{
