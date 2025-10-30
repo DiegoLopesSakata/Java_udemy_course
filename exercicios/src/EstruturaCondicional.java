@@ -1,4 +1,4 @@
-public class estruturaCondicional {
+public class EstruturaCondicional {
 
     public static void parImpar(int n){
         if(n%2==0){

@@ -2,7 +2,7 @@
 //Fórmula: area = sqrt(p*(p-a)*(p-b)*(p-c))
 //onde p = (a + b + c) / 2
 
-//Sem Orientação a Objetos
+//Com Orientação a Objetos
 
 import java.util.Scanner;
 
@@ -10,22 +10,20 @@ void main() {
     var sc = new Scanner(System.in);
 
     System.out.println("Enter the measures of triangle X: ");
-    double aX = sc.nextDouble();
-    double bX = sc.nextDouble();
-    double cX = sc.nextDouble();
+    double a = sc.nextDouble();
+    double b = sc.nextDouble();
+    double c = sc.nextDouble();
+
+    var triangleX = new Triangle(a, b, c);
 
     System.out.println("Enter the measures of triangle Y: ");
-    double aY = sc.nextDouble();
-    double bY = sc.nextDouble();
-    double cY = sc.nextDouble();
+    a = sc.nextDouble();
+    b = sc.nextDouble();
+    c = sc.nextDouble();
 
-    double pX = (aX + bX + cX) / 2;
-    double pY = (aX + bY + cY) / 2;
+    var triangleY = new Triangle(a, b, c);
 
-    double areaX = Math.sqrt(pX*(pX-aX)*(pX-bX)*(pX-cX));
-    double areaY = Math.sqrt(pY*(pY-aY)*(pY-bY)*(pY-cY));
-
-    if(areaX > areaY){
+    if(triangleX.area > triangleY.area){
         System.out.println("Larger area: X");
     }
     else{
