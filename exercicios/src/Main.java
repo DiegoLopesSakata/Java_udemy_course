@@ -1,37 +1,36 @@
+//Fazer um programa para ler as medidas dos lados de dois triangulos X e Y (suponhamos medidas válidas). Em seguida, mostrar o valor das áreas dos dois triângulos e dizer qual dos dois triângulos possui maior área.
+//Fórmula: area = sqrt(p*(p-a)*(p-b)*(p-c))
+//onde p = (a + b + c) / 2
+
+//Sem Orientação a Objetos
+
 import java.util.Scanner;
 
 void main() {
     var sc = new Scanner(System.in);
-    var cond = new estruturaCondicional();
-    char cont = 's';
 
-    do {
-        System.out.println("Digite um valor: ");
-        int valor = sc.nextInt();
+    System.out.println("Enter the measures of triangle X: ");
+    double aX = sc.nextDouble();
+    double bX = sc.nextDouble();
+    double cX = sc.nextDouble();
 
-        cond.parImpar(valor);
-        cond.negativo(valor);
+    System.out.println("Enter the measures of triangle Y: ");
+    double aY = sc.nextDouble();
+    double bY = sc.nextDouble();
+    double cY = sc.nextDouble();
 
-        System.out.println("Digite dois valores para ver se são multiplos:");
-        int a = sc.nextInt();
-        int b = sc.nextInt();
+    double pX = (aX + bX + cX) / 2;
+    double pY = (aX + bY + cY) / 2;
 
-        cond.multiplos(a, b);
+    double areaX = Math.sqrt(pX*(pX-aX)*(pX-bX)*(pX-cX));
+    double areaY = Math.sqrt(pY*(pY-aY)*(pY-bY)*(pY-cY));
 
-        System.out.println("Digite o horario inicial e final de um jogo: ");
-        int horaInicial = sc.nextInt();
-        int horaFinal = sc.nextInt();
-
-        cond.duracaoJogo(horaInicial, horaFinal);
-
-        System.out.println("Digite o seu salário: ");
-        float salario = sc.nextFloat();
-
-        cond.impostoRenda(salario);
-
-        System.out.println("Deseja continuar? (s/n): ");
-        cont = sc.next().charAt(0);
-    }while(cont != 'n');
+    if(areaX > areaY){
+        System.out.println("Larger area: X");
+    }
+    else{
+        System.out.println("Larger area: Y");
+    }
 
     sc.close();
 }
