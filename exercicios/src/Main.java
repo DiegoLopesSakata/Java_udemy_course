@@ -1,37 +1,35 @@
-//Fazer um programa para ler as medidas dos lados de dois triangulos X e Y (suponhamos medidas válidas). Em seguida, mostrar o valor das áreas dos dois triângulos e dizer qual dos dois triângulos possui maior área.
-//Fórmula: area = sqrt(p*(p-a)*(p-b)*(p-c))
-//onde p = (a + b + c) / 2
-
-//Com Orientação a Objetos
-
 import java.util.Scanner;
 
 void main() {
     var sc = new Scanner(System.in);
 
-    System.out.println("Enter the measures of triangle X: ");
-    double a = sc.nextDouble();
-    double b = sc.nextDouble();
-    double c = sc.nextDouble();
+    var produto = new Product();
 
-    var triangleX = new Triangle(a, b, c);
+    System.out.print("Enter product name: ");
+    var name = sc.nextLine();
+    produto.name = name;
 
-    System.out.println("Enter the measures of triangle Y: ");
-    a = sc.nextDouble();
-    b = sc.nextDouble();
-    c = sc.nextDouble();
+    System.out.print("Enter product price: ");
+    var price = sc.nextDouble();
+    produto.price = price;
 
-    var triangleY = new Triangle(a, b, c);
+    System.out.print("Enter product quantity: ");
+    var quantity = sc.nextInt();
+    produto.quantity = quantity;
 
-    var areaX = triangleX.area();
-    var areaY = triangleY.area();
+    System.out.printf("Product data: %s, $%.2f, %d units, Total: $%.2f\n\n", produto.name, produto.price, produto.quantity, produto.TotalValueInStock());
 
-    if(areaX > areaY){
-        System.out.println("Larger area: X");
-    }
-    else{
-        System.out.println("Larger area: Y");
-    }
+    System.out.print("Enter the number of products to be added in the stock: ");
+    var add = sc.nextInt();
+    produto.AddProduct(add);
+
+    System.out.printf("Updated data: %s, $%.2f, %d units, Total: $%.2f\n\n", produto.name, produto.price, produto.quantity, produto.TotalValueInStock());
+
+    System.out.print("Enter the number of products to be removed from stock: ");
+    var remove = sc.nextInt();
+    produto.RemoveProducts(remove);
+
+    System.out.printf("Updated data: %s, $%.2f, %d units, Total: $%.2f\n\n", produto.name, produto.price, produto.quantity, produto.TotalValueInStock());
 
     sc.close();
 }
