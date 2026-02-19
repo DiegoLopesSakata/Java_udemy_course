@@ -1,52 +1,44 @@
-import javax.naming.ldap.BasicControl;
-import javax.xml.transform.Source;
-import java.awt.image.BandCombineOp;
 import java.util.Scanner;
 
 void main() {
     var sc = new Scanner(System.in);
 
-    int accountNumber;
-    String name;
-    float value;
-    char choice;
-
-    System.out.print("Enter account number: ");
-    accountNumber = sc.nextInt();
-    System.out.print("Enter account holder: ");
+    System.out.println("Quantas pessoas serao digitadas? ");
+    int n = sc.nextInt();
     sc.nextLine();
-    name = sc.nextLine();
-    System.out.print("Is there an initial deposit (y/n)? ");
-    choice = sc.next().charAt(0);
 
-    if(choice == 'y'){
-        System.out.print("Enter inital deposit value: ");
-        value = sc.nextFloat();
-    }
-    else{
-        value = 0;
-    }
+    Person[] people = new Person[n];
+    double mediaAltura = 0;
+    int menor16 = 0;
 
-    var account = new BankAccount(accountNumber, name, value);
+    for(int i = 0; i < n; i++){
+        System.out.printf("Digite as informações da %dº pessoa:\n", i+1);
+        System.out.println("Digite o nome: ");
+        String name = sc.nextLine();
+        System.out.println("Digite a idade: ");
+        int age = sc.nextInt();
+        System.out.println("Digite a altura: ");
+        double height = sc.nextDouble();
+        sc.nextLine();
 
-    System.out.println("Account data:");
-    System.out.println(account);
-
-    System.out.println("\nEnter a deposit value: ");
-    value = sc.nextFloat();
-    account.deposit(value);
-
-    System.out.println("Updated account data:");
-    System.out.println(account);
-
-    System.out.println("\nEnter a withdraw value: ");
-    value = sc.nextFloat();
-    if(!account.withdraw(value)){
-        System.out.println("Withdraw value is bigger than account balance.");
+        people[i] = new Person(name, age, height);
+        mediaAltura += height;
+        if(age < 16){
+            menor16++;
+        }
     }
 
-    System.out.println("Updated account data:");
-    System.out.println(account);
+    mediaAltura /= n;
+    menor16 = menor16 * 100 / n;
+
+    System.out.printf("A altura media das pessoas é: %.2f\n", mediaAltura);
+    System.out.println("A porcentagem de menores de 16 é: " + menor16 + "%");
+
+    for(int i = 0; i < people.length; i++){
+        if(people[i].getAge() < 16){
+            System.out.println(people[i].getName());
+        }
+    }
 
     sc.close();
 }
