@@ -1,23 +1,12 @@
-
+import entities.Order;
+import entitiesEnum.OrderStatus;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
+        Order order = new Order(1080, new Date(), OrderStatus.PENDING_PAYMENT);
 
-        String original = "abcde FGHIJ ABC abc DEFG     ";
+        System.out.println(order);
 
-        String s01 = original.toLowerCase();
-        String s02 = original.toUpperCase();
-        String s03 = original.trim();
-        String s04 = original.substring(2);
-        String s05 = original.substring(2, 9);
-        String s06 = original.replace('A', 'X');
-
-        System.out.println("Original: -" + original + "-");
-        System.out.println("toLowerCase: -" + s01 + "-");
-        System.out.println("toUpperCase: -" + s02 + "-");
-        System.out.println("trim: -" + s03 + "-");
-        System.out.println("substring(2): -" + s04 + "-");
-        System.out.println("substring(2, 9): -" + s05 + "-");
-        System.out.println("replace('A', 'X'): -" + s06 + "-");
     }
 }

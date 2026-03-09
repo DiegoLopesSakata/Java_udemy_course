@@ -1,3 +1,5 @@
+import oldExercises.Employee;
+
 import java.util.Scanner;
 
 void main() {
@@ -10,7 +12,7 @@ void main() {
     List<Employee> employees = new ArrayList<>();
 
     for(int i = 0; i < n; i++){
-        System.out.printf("Employee #%d\n\n", i+1);
+        System.out.printf("oldExercises.Employee #%d\n\n", i+1);
 
         System.out.println("Enter the employee id: ");
         int id = sc.nextInt();

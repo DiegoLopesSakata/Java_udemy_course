@@ -1,3 +1,5 @@
+package oldExercises;
+
 public class Calculator {
 
     public static double PI = 3.14159;

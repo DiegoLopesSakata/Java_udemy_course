@@ -1,4 +1,4 @@
-//Exercício para fixação da matéria de vetores
+package oldExercises;//Exercício para fixação da matéria de vetores
 
 public class Person {
     private String name;

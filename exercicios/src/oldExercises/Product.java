@@ -1,3 +1,5 @@
+package oldExercises;
+
 public class Product {
     String name;
     double price;

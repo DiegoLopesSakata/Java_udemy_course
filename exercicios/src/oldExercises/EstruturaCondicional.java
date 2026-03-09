@@ -1,3 +1,5 @@
+package oldExercises;
+
 public class EstruturaCondicional {
 
     public static void parImpar(int n){
