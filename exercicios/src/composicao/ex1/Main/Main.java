@@ -1,9 +1,9 @@
-package composicao.Main;
+package composicao.ex1.Main;
 
-import composicao.entities.Department;
-import composicao.entities.HourContract;
-import composicao.entities.Worker;
-import composicao.entitiesEnum.WorkerLevel;
+import composicao.ex1.entities.Department;
+import composicao.ex1.entities.HourContract;
+import composicao.ex1.entities.Worker;
+import composicao.ex1.entitiesEnum.WorkerLevel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package composicao.entities;
+package composicao.ex1.entities;
 
 import java.util.Date;
 
